@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Access Restricted - SMX AI</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.08);
+      padding: 40px;
+      max-width: 460px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .logo {
+      width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .company-name {
+      font-size: 28px;
+      font-weight: bold;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 25px;
+    }
+
+    .alert {
+      font-size: 16px;
+      background: #ffe6e6;
+      color: #cc0000;
+      padding: 10px 15px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .qr-code {
+      width: 220px;
+      height: 220px;
+      margin: 15px 0;
+      object-fit: contain;
+      cursor: pointer;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .qr-code:hover {
+      transform: scale(1.05);
+    }
+
+    .upi-id {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #555;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    .website-link {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 10px 18px;
+      background-color: #2c3e50;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
+    }
+
+    .website-link:hover {
+      background-color: #1a242f;
+    }
+
+    @media(max-width: 480px) {
+      .company-name {
+        font-size: 22px;
+      }
+
+      .card {
+        padding: 30px 20px;
+      }
+    }
+
+    /* MODAL STYLES */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 5px solid white;
+      border-radius: 10px;
+    }
+
+    .modal:target {
+      display: flex;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <!-- 🔗 Company Logo -->
+
+    <!-- Company Name & Tagline -->
+    <div class="company-name">SMX AI</div>
+    <div class="tagline">Innovating with Intelligence</div>
+
+    <!-- Alert Message -->
+    <div class="alert">
+      Pay your due amount of ₹2000 to continue using this website.
+    </div>
+
+    <!-- QR Code Thumbnail with Link to Modal -->
+    <a href="#qrModal">
+      <img src="images/qr-code.jpeg" alt="UPI QR Code" class="qr-code" />
+    </a>
+
+    <div class="upi-id">UPI ID: 7217806549@kotak811</div>
+
+    <!-- Company Policy Note -->
+    <div class="note">
+      As per <strong>SMX AI company policy</strong>, access to the website has been temporarily restricted until the pending payment is cleared. <br/>
+      After successful payment, your access will be restored.
+    </div>
+
+    <!-- Website Link -->
+    <a href="https://smxai.vercel.app/" target="_blank" class="website-link">
+      Visit SMX AI Website
+    </a>
+  </div>
+
+  <!-- MODAL POPUP -->
+  <div id="qrModal" class="modal">
+    <a href="#" class="close">&times;</a>
+    <img src="images/full.jpeg" alt="Full QR Code" />
+  </div>
+
+</body>
+</html>
